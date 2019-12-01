@@ -14,7 +14,7 @@ public enum OperatorType {
 	public static final int MINUS_TOKEN_NUMBER = 7;
 	public static final int MULTIPLY_TOKEN_NUMBER = 8;
 	public static final int DIVIDE_TOKEN_NUMBER = 9;
-	public static final int EXP_TOKEN_NUMBER = 12;
+	public static final int EXP_TOKEN_NUMBER = 5;
 	
 	public static final int PRINT_TOKEN_NUMBER = 11;
 	

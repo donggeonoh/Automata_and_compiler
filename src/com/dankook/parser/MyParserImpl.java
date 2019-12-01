@@ -92,8 +92,21 @@ public class MyParserImpl implements MyParser {
 	public void term() {
 		int tokenNumber;
 		
-		factor();
+		pow();
 		while(OperatorType.MULTIPLY.equal(token) || OperatorType.DIVIDE.equal(token) || OperatorType.EXP.equal(token)) {
+			tokenNumber = token.getTokenNumber();
+			token = myScanner.nextToken();
+			pow();
+			operate(tokenNumber);
+		}
+	}
+	
+	@Override
+	public void pow() {
+		int tokenNumber;
+		
+		factor();
+		while(OperatorType.EXP.equal(token)) {
 			tokenNumber = token.getTokenNumber();
 			token = myScanner.nextToken();
 			factor();
@@ -146,7 +159,7 @@ public class MyParserImpl implements MyParser {
 				push(d1 / d2);
 				break;
 			case OperatorType.EXP_TOKEN_NUMBER:
-				push((int) Math.pow(d1, d2));
+				push((int) Math.pow(d2, d1));
 				break;
 		}
 	}

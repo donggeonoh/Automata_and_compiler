@@ -5,6 +5,7 @@ public interface MyParser {
     boolean statement();
     void expression();
     void term();
+    void pow();
     void factor();
     void operate(int tokenNumber);
     void push(int value);
